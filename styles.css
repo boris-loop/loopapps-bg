@@ -598,9 +598,17 @@ footer a {
   font-weight: 700;
 }
 
-.footer-links {
-  display: flex;
-  gap: 16px;
+.footer-legal a {
+  display: inline;
+  min-height: 0;
+  color: inherit;
+  font-weight: inherit;
+  text-decoration: none;
+}
+
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  text-decoration: underline;
 }
 
 .legal-page,
@@ -883,10 +891,6 @@ footer a {
   footer {
     margin-right: 16px;
     margin-left: 16px;
-  }
-
-  .footer-links {
-    flex-wrap: wrap;
   }
 
   .button {
