@@ -34,7 +34,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="stylesheet" href="styles.css?v=20260815-1">
+    <link rel="stylesheet" href="styles.css?v=20260816-6">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -72,12 +72,27 @@
           height="260"
           alt="Loop Applications"
         >
+        <span class="mobile-brand-lockup" aria-hidden="true">
+          <span class="mobile-brand-mark"></span>
+        </span>
       </a>
-      <nav aria-label="Primary navigation">
+      <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="#products">Products</a>
         <a href="#team">Team</a>
         <a href="#contact">Contact</a>
       </nav>
+      <a class="mobile-header-cta" href="#contact">Contact us</a>
+      <details class="mobile-nav">
+        <summary aria-label="Open navigation">
+          <span></span>
+          <span></span>
+        </summary>
+        <nav aria-label="Mobile navigation">
+          <a href="#products">Products</a>
+          <a href="#team">Team</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </details>
     </header>
 
     <main id="main">
@@ -166,7 +181,10 @@
             <p>Founder</p>
             <div class="person-links">
               <a href="mailto:boris@loopapps.bg">boris@loopapps.bg</a>
-              <a href="https://www.linkedin.com/in/boris-borisov-7b206038/">LinkedIn</a>
+              <a class="social-link" href="https://www.linkedin.com/in/boris-borisov-7b206038/">
+                <span class="linkedin-mark" aria-hidden="true">in</span>
+                <span>LinkedIn</span>
+              </a>
             </div>
           </article>
           <article class="person-card">
@@ -174,7 +192,10 @@
             <p>Principal Collaborator, Field Brief</p>
             <div class="person-links">
               <a href="mailto:khaleel@loopapps.bg">khaleel@loopapps.bg</a>
-              <a href="https://www.linkedin.com/in/khaleel-al-smadi-29abb2241/">LinkedIn</a>
+              <a class="social-link" href="https://www.linkedin.com/in/khaleel-al-smadi-29abb2241/">
+                <span class="linkedin-mark" aria-hidden="true">in</span>
+                <span>LinkedIn</span>
+              </a>
             </div>
           </article>
         </div>
@@ -187,7 +208,13 @@
           If you work in PR and want Field Brief to cover a campaign, or you are
           building something research-heavy and want a second opinion, email Boris.
         </p>
-        <a class="button primary" href="mailto:boris@loopapps.bg">boris@loopapps.bg</a>
+        <div class="contact-actions">
+          <a class="button primary" href="mailto:boris@loopapps.bg">boris@loopapps.bg</a>
+          <a class="social-link contact-social" href="https://www.linkedin.com/company/138484330/">
+            <span class="linkedin-mark" aria-hidden="true">in</span>
+            <span>LinkedIn</span>
+          </a>
+        </div>
       </section>
     </main>
 
@@ -197,8 +224,12 @@
       </div>
       <div class="footer-links">
         <a href="privacy.html">Privacy</a>
-        <a href="https://www.linkedin.com/company/138484330/">LinkedIn</a>
       </div>
     </footer>
+    <script>
+      document.querySelectorAll(".mobile-nav a").forEach((link) => {
+        link.addEventListener("click", () => link.closest("details").removeAttribute("open"));
+      });
+    </script>
   </body>
 </html>
