@@ -9,9 +9,10 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
     <link rel="manifest" href="manifest.webmanifest">
-    <link rel="stylesheet" href="styles.css?v=20260814-5">
+    <link rel="stylesheet" href="styles.css?v=20260823-1">
   </head>
-  <body>
+  <body id="top">
+    <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
       <a class="brand" href="/" aria-label="Loop Applications home">
         <img
@@ -20,14 +21,29 @@
           height="260"
           alt="Loop Applications"
         >
+        <span class="mobile-brand-lockup" aria-hidden="true">
+          <span class="mobile-brand-mark"></span>
+        </span>
       </a>
-      <nav aria-label="Primary navigation">
+      <nav class="desktop-nav" aria-label="Primary navigation">
         <a href="/">Home</a>
         <a href="/#products">Products</a>
         <a href="/#contact">Contact</a>
       </nav>
+      <a class="mobile-header-cta" href="/#contact">Contact us</a>
+      <details class="mobile-nav">
+        <summary aria-label="Open navigation">
+          <span></span>
+          <span></span>
+        </summary>
+        <nav aria-label="Mobile navigation">
+          <a href="/">Home</a>
+          <a href="/#products">Products</a>
+          <a href="/#contact">Contact</a>
+        </nav>
+      </details>
     </header>
-    <main class="error-page">
+    <main class="error-page" id="main">
       <p class="section-label">404</p>
       <h1>Page not found.</h1>
       <p>The page may have moved, or the address may be incorrect.</p>
