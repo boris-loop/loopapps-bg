@@ -6,3 +6,8 @@ build/
 .env
 .env.*
 !.env.example
+*.tsbuildinfo
+.wrangler/
+
+# Local documentation and agent prompts
+.local-docs/

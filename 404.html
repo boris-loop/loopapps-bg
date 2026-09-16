@@ -1,53 +1,17 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page not found | Loop Applications</title>
     <meta name="robots" content="noindex">
     <meta name="theme-color" content="#f7f7f4">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/icons/favicon-32.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
-    <link rel="manifest" href="manifest.webmanifest">
-    <link rel="stylesheet" href="styles.css?v=20260916-1">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/icons/favicon-32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/icons/apple-touch-icon.png">
+    <link rel="manifest" href="/manifest.webmanifest">
   </head>
   <body id="top">
-    <a class="skip-link" href="#main">Skip to content</a>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="Loop Applications home">
-        <img
-          src="assets/loopapps-wordmark-transparent.webp"
-          width="520"
-          height="260"
-          alt="Loop Applications"
-        >
-        <span class="mobile-brand-lockup" aria-hidden="true">
-          <span class="mobile-brand-mark"></span>
-        </span>
-      </a>
-      <nav class="desktop-nav" aria-label="Primary navigation">
-        <a href="/">Home</a>
-        <a href="/#products">Products</a>
-        <a href="/#contact">Contact</a>
-      </nav>
-      <a class="mobile-header-cta" href="/#contact">Contact us</a>
-      <details class="mobile-nav">
-        <summary aria-label="Open navigation">
-          <span></span>
-          <span></span>
-        </summary>
-        <nav aria-label="Mobile navigation">
-          <a href="/">Home</a>
-          <a href="/#products">Products</a>
-          <a href="/#contact">Contact</a>
-        </nav>
-      </details>
-    </header>
-    <main class="error-page" id="main">
-      <p class="section-label">404</p>
-      <h1>Page not found.</h1>
-      <p>The page may have moved, or the address may be incorrect.</p>
-      <a class="button primary" href="/">Go to loopapps.bg</a>
-    </main>
+    <div id="root"></div>
+    <script type="module" src="/src/not-found.tsx"></script>
   </body>
 </html>

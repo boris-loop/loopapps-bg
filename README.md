@@ -1,69 +1,86 @@
 # Loop Applications Website
 
-Static website for [Loop Applications](https://loopapps.bg), the Sofia-based product studio behind Field Brief.
+React website for [Loop Applications](https://loopapps.bg), the Sofia-based product company behind Field Brief.
 
-## Current site
+## Stack
 
-- Presents Loop Applications EOOD and the company profile.
-- Introduces Field Brief as the first public product.
-- Mentions Field Brief AI as the private production system behind Field Brief.
-- Provides founder and collaborator contact links.
-- Includes mobile-friendly metadata, sitemap, robots file, privacy page,
-  404 page and Cloudflare headers.
+- React 19.3 with typed function components
+- TypeScript 7 in strict mode
+- Tailwind CSS 4 through its Vite plugin
+- Vite 8 with the React SWC plugin
+- Cloudflare Workers Static Assets through Wrangler
 
-## Run locally
+This is a static company site. Its known routes are pre-rendered during the Vite build and hydrated by React in the browser. React Server Components, Actions, `useActionState` and `use` were reviewed for the migration but are intentionally not used: the site has no server component runtime, asynchronous data boundary or mutation workflow that would benefit from them.
 
-Open `index.html` directly in a browser. The site has no build step or backend.
+## Local Development
 
-If the site later needs components, routing, a local dev server or a build pipeline, use Node.js and React as the project stack.
+Requirements: Node.js 22 or newer and npm.
+
+```bash
+npm install
+npm run dev
+```
+
+Vite prints the local URL. To type-check and create the production output:
+
+```bash
+npm run check
+npm run build
+```
+
+The production build is written to `dist/`. Preview that exact output with:
+
+```bash
+npm run preview
+```
 
 ## Structure
 
 ```text
 .
-|-- index.html
-|-- 404.html
-|-- privacy.html
-|-- styles.css
-|-- manifest.webmanifest
-|-- robots.txt
-|-- sitemap.xml
-|-- _headers
-`-- assets/
-    |-- loopapps-wordmark-transparent.webp
-    |-- loopapps-wordmark-transparent.png
-    |-- og-card.png
-    |-- og-card.webp
-    `-- icons/
-`-- scripts/
-    `-- make-transparent-png.mjs
+|-- index.html               # Main Vite entry
+|-- privacy.html             # Privacy page entry
+|-- products/field-brief.html # Product page entry
+|-- 404.html                 # Cloudflare 404 entry
+|-- public/                  # Assets copied unchanged into dist
+|-- scripts/                 # Build-time static rendering
+|-- src/
+|   |-- components/
+|   |   |-- common/          # Reusable navigation, footer and links
+|   |   `-- sections/        # Home-page sections
+|   |-- data/                # Typed site content
+|   |-- pages/               # Product, privacy and not-found pages
+|   |-- styles/              # Tailwind entry and global primitives
+|   `-- types/               # Shared TypeScript interfaces
+|-- vite.config.ts
+`-- wrangler.jsonc
 ```
 
-## Deployment
+## Cloudflare Deployment
 
-The site is served by Cloudflare as a Worker with static assets, connected to this
-repository through the Cloudflare GitHub App. Every push to `main` triggers a
-Workers Build that deploys the repository root; the build reports back to GitHub as
-the `Workers Builds: loopapps-bg` check. There is no build step, no API token and
-no CI workflow. Deployments carry the rules in `_headers`.
+The repository remains connected to the existing Cloudflare Worker through Workers Builds. Vite builds the four HTML entries into `dist/`; `wrangler.jsonc` then deploys that directory as static assets. `_headers`, the manifest, sitemap, robots file and all public assets are copied into the same output.
 
-Two consequences of Workers static-asset routing to keep in mind:
+Before this branch is merged, set the Worker under **Settings > Build** to:
 
-- `.html` extensions are stripped — `/privacy.html` redirects to `/privacy`. Link
-  to the extensionless URL to avoid a redirect hop.
-- `404.html` is **not** served automatically for unknown paths, unlike Cloudflare
-  Pages. Serving it requires a Wrangler config with
-  `assets.not_found_handling = "404-page"`.
+```text
+Build command: npm run build
+Deploy command: npx wrangler deploy
+Non-production deploy command: npx wrangler versions upload
+Root directory: /
+```
 
-Everything in the repository root is published, including `README.md` and
-`scripts/`. To keep files off the public site, move the site into a subdirectory
-and point the asset directory at it.
+The deploy commands are Cloudflare's defaults. The build command is the only required change from the previous no-build setup. Apply it before merging so the first React deployment receives a populated `dist/` directory. Keep the production branch set to `main`; branch builds may remain enabled for preview validation.
 
-Verify that the live site matches this branch:
+`wrangler.jsonc` preserves extensionless HTML routing and serves the built `404.html` for unknown paths. A failed build does not replace the currently deployed Worker, preserving the live version until a successful upload completes.
+
+Local deployment validation:
 
 ```bash
-diff <(curl -s https://loopapps.bg/) index.html && echo "LIVE MATCHES HEAD"
+npm run build
+npx wrangler deploy --dry-run
 ```
+
+After a preview or production deploy, verify `/`, `/privacy`, an unknown URL, navigation anchors and all six Field Brief case links on both desktop and mobile widths.
 
 ## Contact
 
