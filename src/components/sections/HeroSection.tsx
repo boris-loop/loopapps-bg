@@ -6,7 +6,7 @@ export function HeroSection() {
           We build products for work that depends on evidence.
         </h1>
         <p className="mb-8 max-w-[62ch] text-[clamp(1.1rem,2vw,1.36rem)] leading-[1.5] text-copy max-[32.5rem]:mx-auto max-[32.5rem]:mb-0 max-[32.5rem]:max-w-[34ch] max-[32.5rem]:text-[1.0625rem] max-[32.5rem]:leading-[1.5] max-[32.5rem]:text-muted">
-          Loop Applications creates clear, dependable software for specialized teams. Our products help professionals research, decide and act with confidence.
+          Loop Applications builds dependable software products for specialized teams, helping professionals move from evidence to confident decisions.
         </p>
       </div>
 
@@ -17,7 +17,7 @@ export function HeroSection() {
           <span className="relative z-[1] text-[0.86rem] font-extrabold text-[#f0ebe6]">Built for evidence-led teams</span>
         </div>
         <p className="mb-0 max-w-[58ch] text-[0.98rem] leading-[1.55] text-copy max-[32.5rem]:px-1 max-[32.5rem]:text-center max-[32.5rem]:text-base">
-          We design narrow, intelligent systems that combine structured research, source verification and human judgment for specialized domains.
+          Each product brings structured research, source verification and professional judgment into a clear workflow designed for its domain.
         </p>
         <ul className="mt-auto grid list-none gap-2 p-0 max-[32.5rem]:mt-1">
           {['Research workflow', 'Source-linked analysis', 'Domain-specific publishing'].map((item) => (
