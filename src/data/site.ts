@@ -35,7 +35,7 @@ export const productCases: ProductCase[] = [
 
 export const featuredProduct: Product = {
   id: "field-brief",
-  label: "Current product",
+  label: "Our products",
   name: "Field Brief",
   wordmark: {
     src: "/assets/fieldbrief-wordmark.svg",
