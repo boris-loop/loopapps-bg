@@ -9,7 +9,6 @@ export function ProductPage() {
       <main id="main">
         <section className="mx-auto grid w-[min(73.75rem,calc(100%_-_2.25rem))] grid-cols-[minmax(0,0.9fr)_minmax(19rem,0.72fr)] items-center gap-[clamp(2.5rem,7vw,7rem)] py-[clamp(4rem,9vw,7rem)] max-[53.75rem]:grid-cols-1 max-[32.5rem]:mx-4 max-[32.5rem]:w-auto max-[32.5rem]:gap-8 max-[32.5rem]:py-14">
           <div>
-            <p className="section-label">Loop Applications product</p>
             <img className="mb-9 block h-auto w-[min(100%,25rem)]" src={featuredProduct.wordmark.src} alt="Field Brief" width={featuredProduct.wordmark.width} height={featuredProduct.wordmark.height} />
             <h1 className="mb-6 max-w-[17ch] font-serif text-[clamp(3rem,5.4vw,5rem)] font-[450] leading-[0.96]">
               Campaign intelligence for people who do PR for a living.
