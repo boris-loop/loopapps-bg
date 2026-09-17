@@ -34,7 +34,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
       <a
         className="group/button mx-[clamp(1.75rem,4vw,3.5rem)] mt-7 mb-[clamp(2rem,4vw,3.5rem)] inline-flex min-h-[2.875rem] items-center justify-center gap-2.5 self-end justify-self-stretch rounded-control border border-control bg-white py-2 pr-3.5 pl-2 font-extrabold leading-none text-control-ink no-underline motion-safe:transition motion-safe:duration-200 hover:-translate-y-px hover:border-control-strong hover:bg-control-hover hover:shadow-control active:translate-y-0 active:scale-[0.99] motion-reduce:transform-none [grid-area:button] @max-[32.5rem]/product:m-[1.375rem]"
-        href={product.detailUrl}
+        href={product.url}
       >
         <img className="size-8 shrink-0 rounded-control motion-safe:transition-transform group-hover/button:scale-105" src={product.buttonMark} alt="" width="112" height="112" />
         <span>{product.name}</span>
