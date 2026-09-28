@@ -15,6 +15,14 @@ export interface ProductCase {
   imageAlt: string;
   width: number;
   height: number;
+  imageCredit: ImageCredit;
+}
+
+export interface ImageCredit {
+  author: string;
+  license: string;
+  licenseUrl: string;
+  sourceUrl: string;
 }
 
 export interface Product {
@@ -38,6 +46,7 @@ export interface Product {
 export interface Person {
   name: string;
   role: string;
+  focus: string;
   email: string;
   linkedInUrl: string;
 }

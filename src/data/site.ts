@@ -24,13 +24,17 @@ export const productBenefits: ProductBenefit[] = [
   { title: "Practitioner judgment", description: "Take away lessons shaped for real campaign planning." },
 ];
 
+// Case photos are the Wikimedia Commons images fieldbrief.news uses, cleared for commercial use.
+// CC BY-SA 4.0 only allows that with the credit shown next to the photo.
+const ccBySa4 = "https://creativecommons.org/licenses/by-sa/4.0/";
+
 export const productCases: ProductCase[] = [
-  { title: "Slate Auto", href: "https://fieldbrief.news/#case-slate-auto", image: "/assets/fieldbrief-slate-auto.webp", imageAlt: "Yellow Slate Auto electric SUV on a black background", width: 1200, height: 577 },
-  { title: "Audi Haus", href: "https://fieldbrief.news/#case-audi-haus", image: "/assets/fieldbrief-audi-haus.webp", imageAlt: "Audi vehicles displayed inside the Audi Haus of Progress", width: 1200, height: 768 },
-  { title: "Ford F-150 Lightning", href: "https://fieldbrief.news/#case-ford-f150-lightning", image: "/assets/fieldbrief-ford-lightning.webp", imageAlt: "Rear view of a Ford F-150 Lightning pickup at an auto show", width: 1200, height: 690 },
-  { title: "Ram HEMI Comeback", href: "https://fieldbrief.news/#case-ram-hemi-comeback", image: "/assets/fieldbrief-ram-hemi.webp", imageAlt: "White Ram pickup driving on a dirt road", width: 384, height: 256 },
-  { title: "Volkswagen Voltswagen", href: "https://fieldbrief.news/#case-volkswagen-voltswagen", image: "/assets/fieldbrief-volkswagen.webp", imageAlt: "White Volkswagen ID.4 electric SUV", width: 384, height: 216 },
-  { title: "Genesis Magma Racing", href: "https://fieldbrief.news/#case-genesis-magma-racing", image: "/assets/fieldbrief-genesis-le-mans.webp", imageAlt: "Genesis Magma Racing prototype race car on track", width: 1200, height: 675 },
+  { title: "Slate Auto", href: "https://fieldbrief.news/#case-slate-auto", image: "/assets/fieldbrief-slate-auto.webp", imageAlt: "Slate Auto pickup on public display in Seattle", width: 1200, height: 577, imageCredit: { author: "SounderBruce", license: "CC BY-SA 4.0", licenseUrl: ccBySa4, sourceUrl: "https://commons.wikimedia.org/wiki/File:Slate_Truck_demonstration_in_Seattle_-_01.jpg" } },
+  { title: "Audi Haus", href: "https://fieldbrief.news/#case-audi-haus", image: "/assets/fieldbrief-audi-haus.webp", imageAlt: "Audi A6 e-tron parked on a paved lot", width: 1200, height: 768, imageCredit: { author: "Alexander Migl", license: "CC BY-SA 4.0", licenseUrl: ccBySa4, sourceUrl: "https://commons.wikimedia.org/wiki/File:Audi_A6_e-tron_DSC_2835.jpg" } },
+  { title: "Ford F-150 Lightning", href: "https://fieldbrief.news/#case-ford-f150-lightning", image: "/assets/fieldbrief-ford-lightning.webp", imageAlt: "Blue Ford F-150 Lightning parked outside a dealership", width: 1200, height: 690, imageCredit: { author: "Elise240SX", license: "CC BY-SA 4.0", licenseUrl: ccBySa4, sourceUrl: "https://commons.wikimedia.org/wiki/File:2022_Ford_F-150_Lightning_Lariat_in_Atlas_Blue_Metallic,_Front_Right,_08-06-2022.jpg" } },
+  { title: "Ram HEMI Comeback", href: "https://fieldbrief.news/#case-ram-hemi-comeback", image: "/assets/fieldbrief-ram-hemi.webp", imageAlt: "White 2026 Ram 1500 Limited outside a dealership", width: 1200, height: 675, imageCredit: { author: "Elise240SX", license: "CC BY-SA 4.0", licenseUrl: ccBySa4, sourceUrl: "https://commons.wikimedia.org/wiki/File:2026_RAM_1500_Limited_in_Ivory_Tri-Coat_Pearl,_front_right,_2026-06-14.jpg" } },
+  { title: "Volkswagen Voltswagen", href: "https://fieldbrief.news/#case-volkswagen-voltswagen", image: "/assets/fieldbrief-volkswagen.webp", imageAlt: "White Volkswagen ID.4 parked in a lot", width: 1200, height: 675, imageCredit: { author: "MercurySable99", license: "CC BY-SA 4.0", licenseUrl: ccBySa4, sourceUrl: "https://commons.wikimedia.org/wiki/File:2023_Volkswagen_ID.4_Pro_S,_front_left,_08-03-2024.jpg" } },
+  { title: "Genesis Magma Racing", href: "https://fieldbrief.news/#case-genesis-magma-racing", image: "/assets/fieldbrief-genesis-le-mans.webp", imageAlt: "Genesis GMR-001 Hypercar on track", width: 1200, height: 675, imageCredit: { author: "MarcelX42", license: "CC BY-SA 4.0", licenseUrl: ccBySa4, sourceUrl: "https://commons.wikimedia.org/wiki/File:2026_6_Hours_of_Spa-Francorchamps_Genesis_Magma_Racing_Genesis_GMR-001_No.17_(DSC07053).jpg" } },
 ];
 
 export const featuredProduct: Product = {
@@ -53,6 +57,6 @@ export const featuredProduct: Product = {
 };
 
 export const people: Person[] = [
-  { name: "Boris Borisov", role: "Founder", email: "boris@loopapps.bg", linkedInUrl: "https://www.linkedin.com/in/boris-borisov-7b206038/" },
-  { name: "Khaleel Al Smadi", role: "Principal Collaborator, Field Brief", email: "khaleel@loopapps.bg", linkedInUrl: "https://www.linkedin.com/in/khaleel-al-smadi-29abb2241/" },
+  { name: "Boris Borisov", role: "Founder", focus: "Product, access and partnerships", email: "boris@loopapps.bg", linkedInUrl: "https://www.linkedin.com/in/boris-borisov-7b206038/" },
+  { name: "Khaleel Al Smadi", role: "Principal Collaborator, Field Brief", focus: "Editorial and campaign suggestions", email: "khaleel@loopapps.bg", linkedInUrl: "https://www.linkedin.com/in/khaleel-al-smadi-29abb2241/" },
 ];
