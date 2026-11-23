@@ -30,7 +30,7 @@ export default function App() {
   }, []);
 
   return (
-    <PageFrame navigation={mainNavigation} homeHref="#top" contactLabel="Contact">
+    <PageFrame navigation={mainNavigation} homeHref="#top">
       <main id="main">
         <HeroSection />
         <ProductSection />
