@@ -1,18 +1,22 @@
+import type { ReactNode } from "react";
 import type { Product } from "../../types/site";
-import { CaseTile } from "./CaseTile";
 
 interface ProductCardProps {
-  product: Product;
+  product: Pick<Product, "name" | "tagline" | "description" | "benefits" | "url" | "buttonMark">;
+  identity: ReactNode;
+  visual: ReactNode;
+  id?: string;
 }
 
-export function ProductCard({ product }: ProductCardProps) {
+export function ProductCard({ product, identity, visual, id }: ProductCardProps) {
   return (
     <article
       className="grid grid-cols-[minmax(18rem,0.72fr)_minmax(0,1fr)] overflow-hidden rounded-panel border border-line border-t-[0.3125rem] border-t-red bg-white [grid-template-areas:'identity_visual'_'copy_visual'_'button_visual'] @max-[53.75rem]/product:grid-cols-1 @max-[53.75rem]/product:[grid-template-areas:'identity'_'visual'_'copy'_'button']"
-      aria-labelledby="products-title"
+      id={id}
+      aria-label={product.name}
     >
       <div className="[grid-area:identity] px-[clamp(1.75rem,4vw,3.5rem)] pt-[clamp(2rem,4vw,3.5rem)] @max-[32.5rem]/product:px-[1.375rem] @max-[32.5rem]/product:pt-7">
-        <img className="block h-auto w-[min(100%,21rem)]" src={product.wordmark.src} alt="" width={product.wordmark.width} height={product.wordmark.height} />
+        {identity}
         <p className="mt-7 mb-0 max-w-[22ch] text-[clamp(1.3rem,2vw,1.7rem)] font-bold leading-[1.18] text-navy">
           {product.tagline}
         </p>
@@ -40,11 +44,7 @@ export function ProductCard({ product }: ProductCardProps) {
         <span>{product.name}</span>
       </a>
 
-      <div className="grid min-h-[32rem] grid-cols-2 grid-rows-3 gap-1 overflow-hidden bg-ink [grid-area:visual] @max-[53.75rem]/product:min-h-0 @max-[53.75rem]/product:grid-rows-3 @max-[53.75rem]/product:gap-2.5 @max-[53.75rem]/product:bg-gallery @max-[53.75rem]/product:p-3">
-        {product.cases.map((productCase) => (
-          <CaseTile productCase={productCase} key={productCase.title} />
-        ))}
-      </div>
+      <div className="grid min-w-0 [grid-area:visual]">{visual}</div>
     </article>
   );
 }
