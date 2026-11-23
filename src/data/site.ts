@@ -67,5 +67,5 @@ export const featuredProduct: Product = {
 
 export const contacts: ContactPerson[] = [
   { name: "Boris", focus: "Product, access and partnerships", email: "boris@loopapps.bg" },
-  { name: "Khaleel", focus: "Editorial and campaign suggestions", email: "khaleel@loopapps.bg" },
+  { name: "Khaleel", focus: "Editorial", email: "khaleel@loopapps.bg" },
 ];

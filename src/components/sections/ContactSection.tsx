@@ -15,7 +15,7 @@ export function ContactSection() {
             </div>
           ))}
           <div className="max-[53.75rem]:border-t max-[53.75rem]:border-white/20 max-[53.75rem]:pt-7">
-            <h3 className="mb-5 text-[1.05rem] font-bold leading-[1.5] text-contact-muted">Follow Loopapps</h3>
+            <h3 className="mb-5 text-[1.05rem] font-bold leading-[1.5] text-contact-muted">Follow us</h3>
             <LinkedInLink className="min-h-11 border-white bg-white" href="https://www.linkedin.com/company/loopapplications/" />
           </div>
         </div>
