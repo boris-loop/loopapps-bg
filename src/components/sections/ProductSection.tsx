@@ -1,4 +1,5 @@
 import { featuredProduct } from "../../data/site";
+import { CarWashGuideCard } from "../common/CarWashGuideCard";
 import { CaseTile } from "../common/CaseTile";
 import { CopyProofCard } from "../common/CopyProofCard";
 import { ProductCard } from "../common/ProductCard";
@@ -30,6 +31,7 @@ export function ProductSection() {
           }
         />
         <CopyProofCard />
+        <CarWashGuideCard />
       </div>
     </section>
   );
