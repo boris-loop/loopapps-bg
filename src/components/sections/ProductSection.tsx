@@ -3,6 +3,7 @@ import { CarWashGuideCard } from "../common/CarWashGuideCard";
 import { CaseTile } from "../common/CaseTile";
 import { CopyProofCard } from "../common/CopyProofCard";
 import { ProductCard } from "../common/ProductCard";
+import { RoomForMriCard } from "../common/RoomForMriCard";
 
 export function ProductSection() {
   return (
@@ -32,6 +33,7 @@ export function ProductSection() {
         />
         <CopyProofCard />
         <CarWashGuideCard />
+        <RoomForMriCard />
       </div>
     </section>
   );
