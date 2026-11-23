@@ -36,7 +36,7 @@ export function NavDisclosure({ item, mobile, onNavigate }: NavDisclosureProps) 
       </summary>
       <ul className={mobile
         ? "m-0 list-none border-l border-line p-0 ml-3"
-        : "absolute right-0 m-0 min-w-44 list-none rounded-lg border border-line bg-white p-2 shadow-lg"}
+        : "absolute right-0 m-0 min-w-44 list-none rounded-lg border border-line bg-white p-2 shadow-lg max-[53.75rem]:right-auto max-[53.75rem]:left-0"}
       >
         {item.children?.map((child) => (
           <li key={child.href}>
