@@ -1,4 +1,4 @@
-import type { NavItem, Person, Product, ProductBenefit, ProductCase } from "../types/site";
+import type { ContactPerson, NavItem, Product, ProductBenefit, ProductCase } from "../types/site";
 
 const productsNavigation: NavItem[] = [
   { label: "Field Brief", href: "#field-brief" },
@@ -9,7 +9,6 @@ const productsNavigation: NavItem[] = [
 
 export const mainNavigation: NavItem[] = [
   { label: "Products", href: "#products", children: productsNavigation },
-  { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -29,7 +28,7 @@ export const productPageNavigation: NavItem[] = [
   { label: "Contact", href: "/#contact" },
 ];
 
-export const productBenefits: ProductBenefit[] = [
+const productBenefits: ProductBenefit[] = [
   { title: "Campaign sequence", description: "See every public move in order and in context." },
   { title: "Source-linked evidence", description: "Trace the claims back to primary, trade and event sources." },
   { title: "Practitioner judgment", description: "Take away lessons shaped for real campaign planning." },
@@ -39,7 +38,7 @@ export const productBenefits: ProductBenefit[] = [
 // CC BY-SA 4.0 only allows that with the credit shown next to the photo.
 const ccBySa4 = "https://creativecommons.org/licenses/by-sa/4.0/";
 
-export const productCases: ProductCase[] = [
+const productCases: ProductCase[] = [
   { title: "Slate Auto", href: "https://fieldbrief.news/#case-slate-auto", image: "/assets/fieldbrief-slate-auto.webp", imageAlt: "Slate Auto pickup on public display in Seattle", width: 1200, height: 577, imageCredit: { author: "SounderBruce", license: "CC BY-SA 4.0", licenseUrl: ccBySa4, sourceUrl: "https://commons.wikimedia.org/wiki/File:Slate_Truck_demonstration_in_Seattle_-_01.jpg" } },
   { title: "Audi Haus", href: "https://fieldbrief.news/#case-audi-haus", image: "/assets/fieldbrief-audi-haus.webp", imageAlt: "Audi A6 e-tron parked on a paved lot", width: 1200, height: 768, imageCredit: { author: "Alexander Migl", license: "CC BY-SA 4.0", licenseUrl: ccBySa4, sourceUrl: "https://commons.wikimedia.org/wiki/File:Audi_A6_e-tron_DSC_2835.jpg" } },
   { title: "Ford F-150 Lightning", href: "https://fieldbrief.news/#case-ford-f150-lightning", image: "/assets/fieldbrief-ford-lightning.webp", imageAlt: "Blue Ford F-150 Lightning parked outside a dealership", width: 1200, height: 690, imageCredit: { author: "Elise240SX", license: "CC BY-SA 4.0", licenseUrl: ccBySa4, sourceUrl: "https://commons.wikimedia.org/wiki/File:2022_Ford_F-150_Lightning_Lariat_in_Atlas_Blue_Metallic,_Front_Right,_08-06-2022.jpg" } },
@@ -61,13 +60,12 @@ export const featuredProduct: Product = {
   description:
     "Source-linked case studies explaining how notable automotive PR campaigns actually worked. Each report combines primary evidence with practitioner judgment to reveal the mechanics behind the campaign.",
   url: "https://fieldbrief.news/",
-  detailUrl: "/products/field-brief",
   buttonMark: "/assets/fieldbrief-mark.svg",
   benefits: productBenefits,
   cases: productCases,
 };
 
-export const people: Person[] = [
-  { name: "Boris Borisov", role: "Founder", focus: "Product, access and partnerships", email: "boris@loopapps.bg", linkedInUrl: "https://www.linkedin.com/in/boris-borisov-7b206038/" },
-  { name: "Khaleel Al Smadi", role: "Principal Collaborator, Field Brief", focus: "Editorial and campaign suggestions", email: "khaleel@loopapps.bg", linkedInUrl: "https://www.linkedin.com/in/khaleel-al-smadi-29abb2241/" },
+export const contacts: ContactPerson[] = [
+  { name: "Boris", focus: "Product, access and partnerships", email: "boris@loopapps.bg" },
+  { name: "Khaleel", focus: "Editorial and campaign suggestions", email: "khaleel@loopapps.bg" },
 ];

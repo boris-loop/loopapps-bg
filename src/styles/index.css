@@ -19,7 +19,6 @@
   --color-contact-muted: #d8d4ce;
   --color-contact-accent: #ff5c63;
   --shadow-panel: 0 1.5rem 5rem rgba(20, 20, 20, 0.09);
-  --shadow-card: 0 0.75rem 2rem rgba(20, 20, 20, 0.06);
   --shadow-control: 0 0.3125rem 0.875rem rgba(20, 35, 50, 0.08);
   --radius-panel: 0.5rem;
   --radius-control: 0.4375rem;
@@ -160,41 +159,12 @@
     border-radius: 62.4375rem;
   }
 
-  .contact-layout {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas:
-      "title title"
-      "copy actions";
-  }
-
   .product-case:focus-visible {
     position: relative;
     z-index: 1;
     outline: 0.25rem solid #fff;
     outline-offset: -0.25rem;
     box-shadow: inset 0 0 0 0.5rem var(--color-red-dark);
-  }
-
-  .legal-copy p {
-    max-width: 68ch;
-    color: #3f3b37;
-    font-size: 1.08rem;
-    line-height: 1.65;
-  }
-
-  .legal-copy p + p {
-    margin-top: 1.25rem;
-  }
-
-  @media (max-width: 53.75rem) {
-    .contact-layout {
-      grid-template-columns: 1fr;
-      grid-template-areas:
-        "title"
-        "copy"
-        "actions";
-    }
   }
 
   @media (max-width: 32.5rem) {

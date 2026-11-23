@@ -1,5 +1,4 @@
-import { useRef } from "react";
-
+import { useDetailsDismiss } from "../../hooks/useDetailsDismiss";
 import type { NavItem } from "../../types/site";
 
 interface NavDisclosureProps {
@@ -9,26 +8,17 @@ interface NavDisclosureProps {
 }
 
 export function NavDisclosure({ item, mobile, onNavigate }: NavDisclosureProps) {
-  const summary = useRef<HTMLElement>(null);
+  const { detailsRef, summaryRef, close, onBlur, onKeyDown } = useDetailsDismiss();
 
   return (
     <details
       className="group/products relative"
-      onBlur={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) {
-          event.currentTarget.open = false;
-        }
-      }}
-      onKeyDown={(event) => {
-        if (event.key === "Escape" && event.currentTarget.open) {
-          event.stopPropagation();
-          event.currentTarget.open = false;
-          summary.current?.focus();
-        }
-      }}
+      ref={detailsRef}
+      onBlur={onBlur}
+      onKeyDown={onKeyDown}
     >
       <summary
-        ref={summary}
+        ref={summaryRef}
         className={`flex min-h-11 cursor-pointer list-none items-center gap-2 hover:text-red-dark [&::-webkit-details-marker]:hidden ${mobile ? "rounded-md px-3 hover:bg-control-hover" : ""}`}
       >
         {item.label}
@@ -43,9 +33,9 @@ export function NavDisclosure({ item, mobile, onNavigate }: NavDisclosureProps) 
             <a
               className="flex min-h-11 items-center rounded-md px-3 no-underline hover:bg-control-hover hover:text-red-dark"
               href={child.href}
-              onClick={(event) => {
+              onClick={() => {
                 const target = child.href.startsWith("#") ? document.getElementById(child.href.slice(1)) : null;
-                event.currentTarget.closest("details")?.removeAttribute("open");
+                close();
                 onNavigate?.();
                 target?.focus({ preventScroll: true });
               }}

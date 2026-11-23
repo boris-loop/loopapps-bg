@@ -1,37 +1,42 @@
 import { useEffect } from "react";
 
 import { SiteFooter } from "./components/common/SiteFooter";
-import { SiteHeader } from "./components/common/SiteHeader";
+import { PageFrame } from "./components/common/PageFrame";
 import { ContactSection } from "./components/sections/ContactSection";
 import { HeroSection } from "./components/sections/HeroSection";
 import { ProductSection } from "./components/sections/ProductSection";
-import { TeamSection } from "./components/sections/TeamSection";
 import { mainNavigation } from "./data/site";
 
 export default function App() {
   useEffect(() => {
-    const targetId = decodeURIComponent(window.location.hash.slice(1));
+    let targetId: string;
+
+    try {
+      targetId = decodeURIComponent(window.location.hash.slice(1));
+    } catch {
+      // A malformed URL fragment should not prevent the page from mounting.
+      return;
+    }
 
     if (!targetId) {
       return;
     }
 
-    window.requestAnimationFrame(() => {
+    const frame = window.requestAnimationFrame(() => {
       document.getElementById(targetId)?.scrollIntoView();
     });
+
+    return () => window.cancelAnimationFrame(frame);
   }, []);
 
   return (
-    <>
-      <a className="skip-link" href="#main">Skip to content</a>
-      <SiteHeader navigation={mainNavigation} />
+    <PageFrame navigation={mainNavigation} homeHref="#top" contactLabel="Contact">
       <main id="main">
         <HeroSection />
         <ProductSection />
-        <TeamSection />
         <ContactSection />
       </main>
       <SiteFooter />
-    </>
+    </PageFrame>
   );
 }

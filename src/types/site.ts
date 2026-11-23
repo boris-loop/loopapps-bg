@@ -38,16 +38,13 @@ export interface Product {
   tagline: string;
   description: string;
   url: string;
-  detailUrl: string;
   buttonMark: string;
   benefits: ProductBenefit[];
   cases: ProductCase[];
 }
 
-export interface Person {
+export interface ContactPerson {
   name: string;
-  role: string;
   focus: string;
   email: string;
-  linkedInUrl: string;
 }

@@ -3,12 +3,10 @@ import { renderToString } from "react-dom/server";
 
 import App from "./App";
 import { NotFoundPage } from "./pages/NotFoundPage";
-import { PrivacyPage } from "./pages/PrivacyPage";
 import { ProductPage } from "./pages/ProductPage";
 
 const pages: Record<string, ReactNode> = {
   "/": <App />,
-  "/privacy": <PrivacyPage />,
   "/products/field-brief": <ProductPage />,
   "/404": <NotFoundPage />,
 };

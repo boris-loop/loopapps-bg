@@ -1,5 +1,4 @@
-import { useRef } from "react";
-
+import { useDetailsDismiss } from "../../hooks/useDetailsDismiss";
 import type { NavItem } from "../../types/site";
 import { NavDisclosure } from "./NavDisclosure";
 
@@ -10,10 +9,8 @@ interface SiteHeaderProps {
 }
 
 export function SiteHeader({ navigation, homeHref = "#top", contactLabel = "Contact" }: SiteHeaderProps) {
-  const mobileMenu = useRef<HTMLDetailsElement>(null);
+  const { detailsRef, summaryRef, close, onBlur, onKeyDown } = useDetailsDismiss();
   const contactHref = navigation.find((item) => item.label === "Contact")?.href ?? "/#contact";
-
-  const closeMobileMenu = () => mobileMenu.current?.removeAttribute("open");
 
   return (
     <header className="site-header sticky top-0 z-20 flex items-center justify-between gap-6 border-b border-line/80 bg-canvas px-[clamp(1.125rem,5vw,4.5rem)] py-2 max-[53.75rem]:static max-[53.75rem]:flex-col max-[53.75rem]:items-start max-[32.5rem]:sticky max-[32.5rem]:flex-row max-[32.5rem]:items-center max-[32.5rem]:px-4 max-[32.5rem]:py-2 max-[32.5rem]:backdrop-blur-xl">
@@ -36,16 +33,16 @@ export function SiteHeader({ navigation, homeHref = "#top", contactLabel = "Cont
         {contactLabel}
       </a>
 
-      <details className="mobile-nav group/nav relative hidden max-[32.5rem]:block" ref={mobileMenu}>
-        <summary className="grid size-11 cursor-pointer list-none place-content-center gap-1.5" aria-label="Open navigation">
+      <details className="mobile-nav group/nav relative hidden max-[32.5rem]:block" ref={detailsRef} onBlur={onBlur} onKeyDown={onKeyDown}>
+        <summary ref={summaryRef} className="grid size-11 cursor-pointer list-none place-content-center gap-1.5" aria-label="Toggle navigation">
           <span className="block h-[0.09375rem] w-6 bg-ink motion-safe:transition-transform group-open/nav:translate-y-[0.234375rem] group-open/nav:rotate-45" />
           <span className="block h-[0.09375rem] w-6 bg-ink motion-safe:transition-transform group-open/nav:-translate-y-[0.234375rem] group-open/nav:-rotate-45" />
         </summary>
         <nav className="absolute right-0 top-[calc(100%+0.5rem)] grid w-[min(13.75rem,calc(100vw-2rem))] rounded-lg border border-line bg-white p-2 text-[0.95rem] font-bold shadow-[0_1.125rem_3rem_rgba(20,20,20,0.14)]" aria-label="Mobile navigation">
           {navigation.map((item) => item.children ? (
-            <NavDisclosure item={item} mobile onNavigate={closeMobileMenu} key={item.href} />
+            <NavDisclosure item={item} mobile onNavigate={close} key={item.href} />
           ) : (
-            <a className="inline-flex min-h-11 items-center rounded-md px-3 no-underline motion-safe:transition-colors hover:bg-control-hover hover:text-red-dark active:bg-gallery" href={item.href} key={item.href} onClick={closeMobileMenu}>{item.label}</a>
+            <a className="inline-flex min-h-11 items-center rounded-md px-3 no-underline motion-safe:transition-colors hover:bg-control-hover hover:text-red-dark active:bg-gallery" href={item.href} key={item.href} onClick={close}>{item.label}</a>
           ))}
         </nav>
       </details>

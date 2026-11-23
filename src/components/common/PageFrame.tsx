@@ -5,13 +5,15 @@ import { SiteHeader } from "./SiteHeader";
 
 interface PageFrameProps extends PropsWithChildren {
   navigation: NavItem[];
+  homeHref?: string;
+  contactLabel?: string;
 }
 
-export function PageFrame({ children, navigation }: PageFrameProps) {
+export function PageFrame({ children, navigation, homeHref = "/", contactLabel = "Contact us" }: PageFrameProps) {
   return (
     <>
       <a className="skip-link" href="#main">Skip to content</a>
-      <SiteHeader navigation={navigation} homeHref="/" contactLabel="Contact us" />
+      <SiteHeader navigation={navigation} homeHref={homeHref} contactLabel={contactLabel} />
       {children}
     </>
   );
