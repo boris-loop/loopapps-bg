@@ -13,6 +13,7 @@ export function ProductSection() {
       </div>
       <div className="@container/product grid gap-7">
         <ProductCard
+          id={featuredProduct.id}
           product={featuredProduct}
           identity={
             <img

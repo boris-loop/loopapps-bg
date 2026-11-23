@@ -11,8 +11,9 @@ interface ProductCardProps {
 export function ProductCard({ product, identity, visual, id }: ProductCardProps) {
   return (
     <article
-      className="grid grid-cols-[minmax(18rem,0.72fr)_minmax(0,1fr)] overflow-hidden rounded-panel border border-line border-t-[0.3125rem] border-t-red bg-white [grid-template-areas:'identity_visual'_'copy_visual'_'button_visual'] @max-[53.75rem]/product:grid-cols-1 @max-[53.75rem]/product:[grid-template-areas:'identity'_'visual'_'copy'_'button']"
+      className="grid scroll-mt-28 grid-cols-[minmax(18rem,0.72fr)_minmax(0,1fr)] overflow-hidden rounded-panel border border-line border-t-[0.3125rem] border-t-red bg-white [grid-template-areas:'identity_visual'_'copy_visual'_'button_visual'] @max-[53.75rem]/product:grid-cols-1 @max-[53.75rem]/product:[grid-template-areas:'identity'_'visual'_'copy'_'button']"
       id={id}
+      tabIndex={id ? -1 : undefined}
       aria-label={product.name}
     >
       <div className="[grid-area:identity] px-[clamp(1.75rem,4vw,3.5rem)] pt-[clamp(2rem,4vw,3.5rem)] @max-[32.5rem]/product:px-[1.375rem] @max-[32.5rem]/product:pt-7">

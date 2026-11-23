@@ -1,6 +1,7 @@
 import { useRef } from "react";
 
 import type { NavItem } from "../../types/site";
+import { NavDisclosure } from "./NavDisclosure";
 
 interface SiteHeaderProps {
   navigation: NavItem[];
@@ -24,7 +25,9 @@ export function SiteHeader({ navigation, homeHref = "#top", contactLabel = "Cont
       </a>
 
       <nav className="flex items-center gap-[clamp(0.875rem,3vw,1.875rem)] text-[0.9rem] font-bold text-[#34312e] max-[53.75rem]:w-full max-[53.75rem]:justify-between max-[32.5rem]:hidden" aria-label="Primary navigation">
-        {navigation.map((item) => (
+        {navigation.map((item) => item.children ? (
+          <NavDisclosure item={item} key={item.href} />
+        ) : (
           <a className="inline-flex min-h-11 min-w-11 items-center justify-center no-underline motion-safe:transition-colors hover:text-red-dark active:text-red" href={item.href} key={item.href}>{item.label}</a>
         ))}
       </nav>
@@ -39,7 +42,9 @@ export function SiteHeader({ navigation, homeHref = "#top", contactLabel = "Cont
           <span className="block h-[0.09375rem] w-6 bg-ink motion-safe:transition-transform group-open/nav:-translate-y-[0.234375rem] group-open/nav:-rotate-45" />
         </summary>
         <nav className="absolute right-0 top-[calc(100%+0.5rem)] grid w-[min(13.75rem,calc(100vw-2rem))] rounded-lg border border-line bg-white p-2 text-[0.95rem] font-bold shadow-[0_1.125rem_3rem_rgba(20,20,20,0.14)]" aria-label="Mobile navigation">
-          {navigation.map((item) => (
+          {navigation.map((item) => item.children ? (
+            <NavDisclosure item={item} mobile onNavigate={closeMobileMenu} key={item.href} />
+          ) : (
             <a className="inline-flex min-h-11 items-center rounded-md px-3 no-underline motion-safe:transition-colors hover:bg-control-hover hover:text-red-dark active:bg-gallery" href={item.href} key={item.href} onClick={closeMobileMenu}>{item.label}</a>
           ))}
         </nav>

@@ -1,14 +1,25 @@
 import type { NavItem, Person, Product, ProductBenefit, ProductCase } from "../types/site";
 
+const productsNavigation: NavItem[] = [
+  { label: "Field Brief", href: "#field-brief" },
+  { label: "CopyProof", href: "#copyproof-title" },
+  { label: "CarWashGuide", href: "#carwashguide-title" },
+  { label: "Room for MRI", href: "#room-for-mri-title" },
+];
+
 export const mainNavigation: NavItem[] = [
-  { label: "Products", href: "#products" },
+  { label: "Products", href: "#products", children: productsNavigation },
   { label: "Team", href: "#team" },
   { label: "Contact", href: "#contact" },
 ];
 
 export const innerPageNavigation: NavItem[] = [
   { label: "Home", href: "/" },
-  { label: "Products", href: "/#products" },
+  {
+    label: "Products",
+    href: "/#products",
+    children: productsNavigation.map((item) => ({ ...item, href: "/" + item.href })),
+  },
   { label: "Contact", href: "/#contact" },
 ];
 
