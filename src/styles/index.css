@@ -510,7 +510,7 @@ body {
 }
 .contact-follow p {
   min-height: 2.75rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   color: #f5f2e9;
   font-size: 0.875rem;
 }
