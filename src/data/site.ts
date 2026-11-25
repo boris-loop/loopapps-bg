@@ -31,12 +31,6 @@ export const innerPageNavigation: NavItem[] = [
   { label: "Get in touch", href: "/#contact" },
 ];
 
-export const productPageNavigation: NavItem[] = [
-  { label: "Home", href: "/" },
-  { label: "Field Brief", href: "https://fieldbrief.news/" },
-  { label: "Get in touch", href: "/#contact" },
-];
-
 const productBenefits: ProductBenefit[] = [
   {
     title: "Campaign sequence",
