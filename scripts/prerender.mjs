@@ -21,7 +21,10 @@ for (const page of pages) {
     throw new Error(`Unable to find the React root in ${page.file}`);
   }
 
-  const html = template.replace(rootElement, `<div id="root">${renderPage(page.pathname)}</div>`);
+  const html = template.replace(
+    rootElement,
+    `<div id="root">${renderPage(page.pathname)}</div>`,
+  );
   await writeFile(outputPath, html);
 }
 

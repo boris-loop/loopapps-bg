@@ -16,7 +16,9 @@ export default defineConfig(({ isSsrBuild }) => ({
         rollupOptions: {
           input: {
             main: fileURLToPath(new URL("./index.html", import.meta.url)),
-            product: fileURLToPath(new URL("./products/field-brief.html", import.meta.url)),
+            product: fileURLToPath(
+              new URL("./products/field-brief.html", import.meta.url),
+            ),
             notFound: fileURLToPath(new URL("./404.html", import.meta.url)),
           },
         },

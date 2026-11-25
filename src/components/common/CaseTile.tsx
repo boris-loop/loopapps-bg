@@ -29,8 +29,14 @@ export function CaseTile({ productCase }: CaseTileProps) {
       {/* Outside the link: nested links are invalid, and CC BY-SA needs this credit visible beside the photo.
           On the stacked card layout the title sits under the photo, so pin the credit to the 4:3 photo's bottom edge instead. */}
       <figcaption className="absolute right-0 bottom-0 left-0 bg-linear-to-t from-black/60 to-transparent px-2.5 pt-4 pb-1.5 @max-[53.75rem]/product:bottom-auto @max-[53.75rem]/product:top-[75cqw] @max-[53.75rem]/product:-translate-y-full text-right text-[0.6875rem] leading-tight text-white/90 [&_a]:inline-block [&_a]:py-1 [&_a]:text-inherit [&_a]:underline [&_a]:decoration-white/40 [&_a]:underline-offset-2 [&_a:hover]:decoration-white pointer-events-none [&_a]:pointer-events-auto">
-        Photo: <a href={credit.sourceUrl} rel="noopener" target="_blank">{credit.author}</a>,{" "}
-        <a href={credit.licenseUrl} rel="license noopener" target="_blank">{credit.license}</a>
+        Photo:{" "}
+        <a href={credit.sourceUrl} rel="noopener" target="_blank">
+          {credit.author}
+        </a>
+        ,{" "}
+        <a href={credit.licenseUrl} rel="license noopener" target="_blank">
+          {credit.license}
+        </a>
       </figcaption>
     </figure>
   );

@@ -14,7 +14,7 @@ This is a static company site. Its known routes are pre-rendered during the Vite
 
 ## Local Development
 
-Requirements: Node.js 22 or newer and npm.
+Requirements: Node.js 22.6 or newer and npm. The regression tests use Node’s built-in TypeScript stripping.
 
 ```bash
 npm install
@@ -33,6 +33,14 @@ The production build is written to `dist/`. Preview that exact output with:
 ```bash
 npm run preview
 ```
+
+## Code conventions
+
+Keep application code free of React effect hooks (`useEffect`, `useLayoutEffect`, and `useInsertionEffect`), including custom hooks. Use rendering for derived values, event handlers for user actions, and DOM ref callbacks or subscriptions for element/resource lifecycles. Keep cleanup with the code that starts the work.
+
+The homepage restores initial URL fragments through a stable ref callback on its main element. It schedules scrolling after attachment and cancels pending work when the element detaches. This also supports the client-rendered development page; production pages already include their HTML before hydration.
+
+Prettier uses the same settings as CopyProof Web. Run `npm run format` to format the repository or `npm run format:check` to verify it. Generated output, public assets and local workspace files are excluded. `npm run check` verifies formatting, TypeScript and the fragment-scrolling regression tests. Run `npm run build` as the production build gate.
 
 ## Structure
 

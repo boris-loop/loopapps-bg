@@ -24,7 +24,9 @@
   --radius-control: 0.4375rem;
   --container-content: 73.75rem;
   --container-reading: 55rem;
-  --font-sans: "Source Sans 3 Variable", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans:
+    "Inter Variable", ui-sans-serif, system-ui, -apple-system,
+    BlinkMacSystemFont, "Segoe UI", sans-serif;
   --font-serif: "Newsreader Variable", Georgia, "Times New Roman", serif;
 }
 
@@ -179,4 +181,631 @@
       margin-left: 1rem;
     }
   }
+}
+
+/* Company exploration: an editorial family of focused products. */
+:root {
+  --family-paper: #f5f2e9;
+  --family-ink: #24251f;
+  --family-red: #d91e2b;
+}
+body {
+  background: var(--family-paper);
+}
+.family-shell {
+  width: min(80rem, calc(100% - 6rem));
+  margin-inline: auto;
+}
+.family-header {
+  position: relative;
+  z-index: 30;
+  border-bottom: 1px solid #26251f2b;
+  background: var(--family-paper);
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 6.75rem;
+}
+.company-brand {
+  display: block;
+  width: 9.25rem;
+}
+.company-brand img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.desktop-navigation {
+  display: flex;
+  align-items: center;
+  gap: 2.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.desktop-navigation > a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  text-decoration: none;
+}
+.desktop-navigation > a:hover {
+  color: var(--family-red);
+}
+.family-mobile-nav {
+  display: none;
+}
+.eyebrow {
+  font-size: 0.875rem;
+  line-height: 1.4;
+  letter-spacing: 0.075em;
+  text-transform: uppercase;
+  font-weight: 650;
+}
+.company-hero {
+  padding-block: 5rem 4.75rem;
+}
+.hero-copy h1 {
+  margin-block: 2.25rem 1.5rem;
+  font: 450 clamp(3.5rem, 6.3vw, 6.5rem)/0.99 var(--font-serif);
+  letter-spacing: -0.055em;
+}
+.hero-copy h1 em,
+.family-section-heading h2 em,
+.contact-intro h2 em {
+  color: var(--family-red);
+  font-weight: 400;
+}
+.text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  min-height: 2.75rem;
+  font-weight: 650;
+  text-decoration: none;
+}
+.text-link span {
+  font-size: 1.4rem;
+  font-weight: 400;
+  transition: transform 0.2s;
+}
+.text-link:hover {
+  text-decoration: underline;
+}
+.text-link:hover span {
+  transform: rotate(90deg);
+}
+.family-products {
+  border-top: 1px solid #26251f4d;
+  padding-block: 2.75rem 6rem;
+  scroll-margin-top: 2rem;
+}
+.family-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+.family-section-heading h2 {
+  margin: 1.25rem 0 0;
+  font: 450 clamp(2.75rem, 4.3vw, 4.5rem)/1.02 var(--font-serif);
+  letter-spacing: -0.04em;
+}
+.family-section-heading > p {
+  max-width: 18rem;
+  font-size: 1.125rem;
+  color: #54534a;
+  margin: 0 0 0.25rem;
+}
+.family-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3rem 1.75rem;
+}
+.family-card {
+  min-width: 0;
+  background: #fffdf7;
+  border: 1px solid #26251f26;
+}
+.brand-stage {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 20rem;
+  overflow: hidden;
+  padding: 2rem;
+  text-decoration: none;
+}
+.brief .brand-stage {
+  background: #e5e9ef;
+  color: #172741;
+}
+.proof .brand-stage {
+  background:
+    radial-gradient(ellipse at 30% 20%, #3c8152 0%, transparent 75%), #21633f;
+  color: #e5f1e7;
+}
+.wash .brand-stage {
+  background: #173f35;
+  color: #f5f1cf;
+}
+.mri .brand-stage {
+  background: #ebd6bd;
+  color: #213e39;
+}
+.brand-identity {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+.brand-identity img {
+  width: 2.5rem;
+  height: 2.5rem;
+  object-fit: contain;
+}
+.brand-identity span {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+.brief .brand-identity img {
+  width: 11rem;
+  height: auto;
+}
+.product-art {
+  position: relative;
+  flex: 1;
+  min-height: 12rem;
+}
+.brand-caption {
+  position: relative;
+  z-index: 2;
+  padding-right: 2.75rem;
+  font-size: 0.875rem;
+}
+.brand-plus {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  display: grid;
+  place-items: center;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  transition: transform 0.25s;
+}
+.brand-stage:hover .brand-plus {
+  transform: rotate(90deg);
+}
+.brief .product-art span {
+  position: absolute;
+  top: 1.8rem;
+  left: 0.5rem;
+  font: 450 2.75rem/0.95 var(--font-serif);
+  letter-spacing: -0.025em;
+}
+.brief .product-art i {
+  position: absolute;
+  width: 48%;
+  height: 7rem;
+  right: -1rem;
+  top: 1.75rem;
+  border-top: 1px solid #17274160;
+  border-bottom: 1px solid #17274160;
+  transform: rotate(-18deg);
+}
+.brief .product-art i:nth-child(2) {
+  top: 3.5rem;
+}
+.brief .product-art i:nth-child(3) {
+  top: 5.25rem;
+}
+.wash .product-art {
+  display: grid;
+  place-items: center;
+}
+.wash .product-art img {
+  position: relative;
+  z-index: 1;
+  width: 6rem;
+  height: 6rem;
+}
+.wash-orbit {
+  position: absolute;
+  width: 16rem;
+  height: 9rem;
+  border: 1px solid #a8cbae60;
+  border-radius: 50%;
+  transform: rotate(-20deg);
+}
+.wash-orbit:nth-child(2) {
+  width: 21rem;
+  height: 11rem;
+  transform: rotate(15deg);
+}
+.scanner-ring {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  border: 2.5rem solid #f8f1e5;
+  outline: 1px solid #213e3933;
+  top: 1rem;
+  left: calc(50% - 5rem);
+  box-shadow: 0.75rem 0.5rem 0 #c3ad93;
+}
+.scanner-table {
+  position: absolute;
+  width: 9rem;
+  height: 1.4rem;
+  background: #213e39;
+  top: 8.75rem;
+  left: calc(50% - 2rem);
+  transform: skewY(-12deg);
+  border-bottom: 0.4rem solid #426057;
+}
+.family-card-copy {
+  padding: 1.75rem 2rem 1.5rem;
+}
+.product-category {
+  color: #626257;
+  font-size: 0.875rem;
+  margin-bottom: 0.65rem;
+}
+.family-card-copy h3 {
+  font: 450 2.4rem/1.1 var(--font-serif);
+  letter-spacing: -0.035em;
+  margin: 0 0 1rem;
+  scroll-margin-top: 2rem;
+}
+.product-pitch {
+  font-size: 1.125rem;
+  font-weight: 650;
+  margin-bottom: 0.5rem;
+}
+.product-description {
+  color: #54534a;
+  font-size: 1.0625rem;
+  line-height: 1.55;
+  margin-bottom: 1.5rem;
+}
+.product-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.5rem;
+  font-size: 0.875rem;
+  color: #626257;
+}
+.product-tags li {
+  padding-left: 0.75rem;
+  border-left: 2px solid #b7b8a7;
+}
+.product-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  border-top: 1px solid #26251f26;
+  padding-top: 0.75rem;
+}
+.case-link {
+  font-size: 0.875rem;
+  min-height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+}
+.family-contact {
+  background: #24251f;
+  color: #f5f2e9;
+  padding-block: 4.5rem;
+  scroll-margin-top: 1rem;
+}
+.family-contact > .family-shell {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.45fr);
+  gap: 3rem 4rem;
+}
+.contact-intro h2 {
+  font: 450 clamp(2.75rem, 4.2vw, 4.4rem)/1.02 var(--font-serif);
+  letter-spacing: -0.04em;
+  margin: 1.75rem 0 1.25rem;
+}
+.contact-intro h2 em {
+  color: #ff8f8b;
+}
+.contact-intro > p:last-child {
+  font-size: 1.125rem;
+  max-width: 25rem;
+  color: #c7c7ba;
+}
+.contact-people {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  align-content: center;
+}
+.contact-person {
+  border-top: 1px solid #f5f2e94d;
+  padding-top: 1rem;
+}
+.contact-person p {
+  color: #c7c7ba;
+  font-size: 0.875rem;
+  min-height: 2.75rem;
+}
+.contact-person h3 {
+  font: 450 2.4rem/1.1 var(--font-serif);
+  margin-bottom: 0.75rem;
+}
+.contact-person a {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  min-height: 2.75rem;
+  color: #ffaaa5;
+  font-size: 1rem;
+}
+.contact-follow {
+  border-top: 1px solid #f5f2e94d;
+  padding-top: 1rem;
+}
+.contact-follow p {
+  min-height: 2.75rem;
+  margin-bottom: 1rem;
+  color: #f5f2e9;
+  font-size: 0.875rem;
+}
+.contact-follow a {
+  min-height: 3rem;
+  padding-inline: 1rem;
+  font-size: 1rem;
+}
+.family-footer {
+  padding-block: 1.75rem;
+  text-align: center;
+}
+.family-footer p {
+  font-size: 0.875rem;
+  color: #626257;
+  margin: 0;
+}
+summary:focus-visible,
+h3[tabindex]:focus-visible {
+  outline: 3px solid var(--family-red);
+  outline-offset: 4px;
+}
+@media (min-width: 1100px) {
+  .family-card-copy {
+    min-height: 23rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .product-links {
+    margin-top: auto;
+  }
+}
+@media (max-width: 1000px) {
+  .family-shell {
+    width: calc(100% - 3rem);
+  }
+  .company-hero {
+    padding-block: 3.5rem;
+  }
+  .hero-copy h1 {
+    font-size: clamp(3.5rem, 7vw, 5rem);
+  }
+  .family-contact > .family-shell {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  .contact-people {
+    max-width: none;
+  }
+  .brand-stage {
+    padding: 1.5rem;
+  }
+  .family-card-copy {
+    padding: 1.5rem;
+  }
+  .brand-identity span {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 640px) {
+  .family-shell {
+    width: calc(100% - 2rem);
+  }
+  .header-inner {
+    min-height: 5rem;
+  }
+  .company-brand {
+    width: 7.5rem;
+  }
+  .desktop-navigation {
+    display: none;
+  }
+  .family-mobile-nav {
+    display: block;
+    position: relative;
+  }
+  .family-mobile-nav > summary {
+    min-height: 2.75rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  .family-mobile-nav > summary span {
+    font-size: 1.5rem;
+  }
+  .family-mobile-nav[open] > summary span {
+    transform: rotate(45deg);
+  }
+  .family-mobile-nav > nav {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    width: min(18rem, calc(100vw - 2rem));
+    border: 1px solid #26251f4d;
+    background: #fffdf7;
+    box-shadow: 0 1rem 2rem #24251f20;
+    padding: 0.75rem;
+  }
+  .family-mobile-nav > nav > a {
+    display: flex;
+    align-items: center;
+    min-height: 2.75rem;
+    padding-inline: 0.75rem;
+  }
+  .company-hero {
+    padding-block: 2.75rem 2.25rem;
+  }
+  .hero-copy h1 {
+    font-size: clamp(2.9rem, 10.5vw, 4.2rem);
+    margin-block: 1.5rem;
+  }
+  .family-products {
+    padding-block: 2rem 3rem;
+  }
+  .family-section-heading {
+    display: block;
+    margin-bottom: 1.75rem;
+  }
+  .family-section-heading h2 {
+    font-size: 2.75rem;
+    margin-block: 1rem;
+  }
+  .family-section-heading > p {
+    max-width: 25rem;
+  }
+  .family-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  .brand-stage {
+    min-height: 18rem;
+  }
+  .product-art {
+    min-height: 11rem;
+  }
+  .brand-identity span {
+    font-size: 1.5rem;
+  }
+  .family-contact {
+    padding-top: 3rem;
+  }
+  .contact-intro h2 {
+    font-size: clamp(2.5rem, 9vw, 3.5rem);
+  }
+  .contact-people {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+  .contact-follow {
+    grid-column: 1 / -1;
+  }
+  .contact-person a {
+    font-size: 1rem;
+    overflow-wrap: anywhere;
+  }
+}
+@media (max-width: 360px) {
+  .contact-people {
+    grid-template-columns: 1fr;
+  }
+  .contact-person p {
+    min-height: 0;
+    margin-bottom: 0.5rem;
+  }
+  .brand-identity span {
+    font-size: 1.25rem;
+  }
+  .family-card-copy {
+    padding: 1.25rem;
+  }
+}
+
+.hero-copy h1 em {
+  margin-right: 0.08em;
+}
+
+/* Give the evidence-led headline the full width of the page. */
+.hero-copy > .eyebrow {
+  margin-bottom: 2rem;
+}
+.hero-copy h1 {
+  margin-block: 0;
+}
+@media (max-width: 640px) {
+  .hero-copy > .eyebrow {
+    margin-bottom: 1.5rem;
+  }
+  .hero-copy h1 {
+    margin-block: 0;
+  }
+}
+
+.proof .product-art {
+  display: grid;
+  place-items: center;
+}
+.copyproof-documents {
+  display: block;
+  width: 15rem;
+  max-width: 100%;
+  height: 12rem;
+  object-fit: contain;
+}
+
+.proof .brand-identity > img {
+  background: #e5f1e7;
+  border-radius: 0.25rem;
+  padding: 0.2rem;
+}
+
+/* Give the primary contact action a clear, restrained shape. */
+.desktop-navigation details > summary {
+  border-bottom: 2px solid transparent;
+  transition:
+    border-color 160ms ease,
+    color 160ms ease;
+}
+.desktop-navigation details > summary:hover,
+.desktop-navigation details > summary:focus-visible,
+.desktop-navigation details[open] > summary {
+  border-bottom-color: var(--family-red);
+}
+.desktop-navigation > .nav-contact,
+.family-mobile-nav > nav > .nav-contact {
+  justify-content: center;
+  border: 1px solid var(--family-ink);
+  border-radius: 0.25rem;
+  padding: 0.625rem 1.25rem;
+  color: var(--family-ink);
+  text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    color 160ms ease;
+}
+.desktop-navigation > .nav-contact:hover,
+.desktop-navigation > .nav-contact:focus-visible,
+.family-mobile-nav > nav > .nav-contact:hover,
+.family-mobile-nav > nav > .nav-contact:focus-visible {
+  background: var(--family-ink);
+  color: var(--family-paper);
+}
+.family-mobile-nav > nav > .nav-contact {
+  margin-top: 0.5rem;
 }

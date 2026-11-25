@@ -8,10 +8,16 @@ interface PageFrameProps extends PropsWithChildren {
   homeHref?: string;
 }
 
-export function PageFrame({ children, navigation, homeHref = "/" }: PageFrameProps) {
+export function PageFrame({
+  children,
+  navigation,
+  homeHref = "/",
+}: PageFrameProps) {
   return (
     <>
-      <a className="skip-link" href="#main">Skip to content</a>
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
       <SiteHeader navigation={navigation} homeHref={homeHref} />
       {children}
     </>

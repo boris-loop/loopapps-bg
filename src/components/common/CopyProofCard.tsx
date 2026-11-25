@@ -8,9 +8,20 @@ const copyProof = {
   description:
     "Compare approved Word or PDF text with medicine labels, package leaflets and PDF artwork. Review the differences before signing off.",
   benefits: [
-    { title: "Text comparison", description: "Find changes between approved text and the version under review." },
-    { title: "Evidence in context", description: "See findings in the original documents and identify passages that need a manual check." },
-    { title: "Review decisions", description: "Record the outcome alongside the comparison." },
+    {
+      title: "Text comparison",
+      description:
+        "Find changes between approved text and the version under review.",
+    },
+    {
+      title: "Evidence in context",
+      description:
+        "See findings in the original documents and identify passages that need a manual check.",
+    },
+    {
+      title: "Review decisions",
+      description: "Record the outcome alongside the comparison.",
+    },
   ],
   url: "https://copyproof.io/",
   buttonMark: logo,

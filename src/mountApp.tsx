@@ -1,5 +1,5 @@
 import "@fontsource-variable/newsreader/wght.css";
-import "@fontsource-variable/source-sans-3/wght.css";
+import "@fontsource-variable/inter/wght.css";
 import { StrictMode, type ReactNode } from "react";
 import { createRoot, hydrateRoot } from "react-dom/client";
 import "./styles/index.css";

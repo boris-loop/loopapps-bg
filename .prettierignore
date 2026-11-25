@@ -1,0 +1,12 @@
+# Generated output, dependencies and local workspace state.
+node_modules/
+dist/
+build/
+.idea/
+.local-docs/
+.wrangler/
+*.tsbuildinfo
+package-lock.json
+
+# Preserve the bytes of existing brand assets and public metadata.
+public/

@@ -8,9 +8,21 @@ const carWashGuide = {
   description:
     "CarWashGuide is an independent U.S. car wash directory, starting in Florida. Browse local washes by city and compare wash methods, advertised prices, and membership options where available.",
   benefits: [
-    { title: "Wash methods", description: "Filter for touchless, soft-touch, self-service, or hand washes." },
-    { title: "Advertised prices", description: "Compare published prices and packages where operators list them." },
-    { title: "Clear verification", description: "See when the available sources leave a wash method unconfirmed." },
+    {
+      title: "Wash methods",
+      description:
+        "Filter for touchless, soft-touch, self-service, or hand washes.",
+    },
+    {
+      title: "Advertised prices",
+      description:
+        "Compare published prices and packages where operators list them.",
+    },
+    {
+      title: "Clear verification",
+      description:
+        "See when the available sources leave a wash method unconfirmed.",
+    },
   ],
   url: "https://carwashguide.org/",
   buttonMark: logo,
