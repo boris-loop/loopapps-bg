@@ -1,6 +1,6 @@
 # Loop Applications Website
 
-React website for [Loop Applications](https://loopapps.bg), the Sofia-based product company behind Field Brief.
+React website for [Loop Applications](https://loopapps.bg), the Sofia-based company behind Field Brief, CopyProof, CarWashGuide and Room for MRI.
 
 ## Stack
 
@@ -47,7 +47,6 @@ Prettier uses the same settings as CopyProof Web. Run `npm run format` to format
 ```text
 .
 |-- index.html               # Main Vite entry
-|-- products/field-brief.html # Product page entry
 |-- 404.html                 # Cloudflare 404 entry
 |-- public/                  # Assets copied unchanged into dist
 |-- scripts/                 # Build-time static rendering
@@ -56,7 +55,7 @@ Prettier uses the same settings as CopyProof Web. Run `npm run format` to format
 |   |   |-- common/          # Reusable navigation, footer and links
 |   |   `-- sections/        # Home-page sections
 |   |-- data/                # Typed site content
-|   |-- pages/               # Product and not-found pages
+|   |-- pages/               # Not-found page
 |   |-- styles/              # Tailwind entry and global primitives
 |   `-- types/               # Shared TypeScript interfaces
 |-- vite.config.ts
@@ -65,7 +64,7 @@ Prettier uses the same settings as CopyProof Web. Run `npm run format` to format
 
 ## Cloudflare Deployment
 
-The repository remains connected to the existing Cloudflare Worker through Workers Builds. Vite builds the three HTML entries into `dist/`; `wrangler.jsonc` then deploys that directory as static assets. `_headers`, the manifest, sitemap, robots file and all public assets are copied into the same output.
+The repository remains connected to the existing Cloudflare Worker through Workers Builds. Vite builds the homepage and 404 HTML entries into `dist/`; `wrangler.jsonc` then deploys that directory as static assets. `_headers`, the manifest, sitemap, robots file and all public assets are copied into the same output.
 
 Before this branch is merged, set the Worker under **Settings > Build** to:
 
@@ -87,7 +86,7 @@ npm run build
 npx wrangler deploy --dry-run
 ```
 
-After a preview or production deploy, verify `/`, an unknown URL, navigation anchors and all six Field Brief case links on both desktop and mobile widths.
+After a preview or production deploy, verify `/`, an unknown URL returning HTTP 404, navigation anchors and all four external product links on both desktop and mobile widths.
 
 ## Contact
 

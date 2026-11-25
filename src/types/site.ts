@@ -9,23 +9,6 @@ export interface ProductBenefit {
   description: string;
 }
 
-export interface ProductCase {
-  title: string;
-  href: string;
-  image: string;
-  imageAlt: string;
-  width: number;
-  height: number;
-  imageCredit: ImageCredit;
-}
-
-export interface ImageCredit {
-  author: string;
-  license: string;
-  licenseUrl: string;
-  sourceUrl: string;
-}
-
 export interface Product {
   id: string;
   label: string;
@@ -40,7 +23,6 @@ export interface Product {
   url: string;
   buttonMark: string;
   benefits: ProductBenefit[];
-  cases: ProductCase[];
 }
 
 export interface ContactPerson {

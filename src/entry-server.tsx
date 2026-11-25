@@ -3,11 +3,9 @@ import { renderToString } from "react-dom/server";
 
 import App from "./App";
 import { NotFoundPage } from "./pages/NotFoundPage";
-import { ProductPage } from "./pages/ProductPage";
 
 const pages: Record<string, ReactNode> = {
   "/": <App />,
-  "/products/field-brief": <ProductPage />,
   "/404": <NotFoundPage />,
 };
 

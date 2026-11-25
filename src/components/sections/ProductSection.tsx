@@ -124,11 +124,6 @@ export function ProductSection() {
                 <a className="text-link" href={product.url}>
                   Visit {product.name}
                 </a>
-                {product.tone === "brief" && (
-                  <a className="case-link" href="/products/field-brief">
-                    View case studies
-                  </a>
-                )}
               </div>
             </div>
           </article>

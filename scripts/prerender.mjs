@@ -8,7 +8,6 @@ const { renderPage } = await import(pathToFileURL(serverOutput).href);
 
 const pages = [
   { pathname: "/", file: "index.html" },
-  { pathname: "/products/field-brief", file: "products/field-brief.html" },
   { pathname: "/404", file: "404.html" },
 ];
 
