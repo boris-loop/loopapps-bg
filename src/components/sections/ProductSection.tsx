@@ -3,7 +3,6 @@ const products = [
     id: "field-brief",
     name: "Field Brief",
     category: "Automotive PR intelligence",
-    indexCategory: "Automotive PR",
     tone: "brief",
     logo: "/assets/fieldbrief-wordmark.svg",
     url: "https://fieldbrief.news/",
@@ -15,7 +14,6 @@ const products = [
     id: "copyproof-title",
     name: "CopyProof",
     category: "Pharmaceutical document comparison",
-    indexCategory: "Pharmaceutical labeling",
     tone: "proof",
     logo: "/assets/copyproof-logo.webp",
     url: "https://copyproof.io/",
@@ -27,7 +25,6 @@ const products = [
     id: "carwashguide-title",
     name: "CarWashGuide",
     category: "U.S. car wash directory",
-    indexCategory: "U.S. car washes",
     tone: "wash",
     logo: "/assets/carwashguide-mark.svg",
     url: "https://carwashguide.org/",
@@ -39,7 +36,6 @@ const products = [
     id: "room-for-mri-title",
     name: "Room for MRI",
     category: "U.S. MRI equipment directory",
-    indexCategory: "U.S. MRI equipment",
     tone: "mri",
     logo: "/assets/room-for-mri-mark.webp",
     url: "https://roomformri.com/",
@@ -61,16 +57,6 @@ export function ProductSection() {
           The product family
         </h2>
       </div>
-      <nav className="product-index" aria-label="Jump to a product">
-        {products.map((product) => (
-          <a href={`#${product.id}`} key={product.id}>
-            <span className="product-index-name">{product.name}</span>
-            <span className="product-index-category">
-              {product.indexCategory}
-            </span>
-          </a>
-        ))}
-      </nav>
       <div className="family-grid">
         {products.map((product) => (
           <article
